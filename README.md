@@ -1,11 +1,10 @@
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
 
-Analyze text content from tripavisors reviews over Pullman resort in Port Douglas, using a varity of methods.
+Analyse text content from tripavisors reviews over Pullman resort in Port Douglas, using a varity of methods.
 
-## Check the full jupyter notebook here (Report)
+[Check the full jupyter notebook here (Report)](http://nbviewer.jupyter.org/github/anankeman/Pullman/blob/master/Reputation%20Timeline%20Sea%20Temple.ipynb)
 
-http://nbviewer.jupyter.org/github/anankeman/Pullman/blob/master/Reputation%20Timeline%20Sea%20Temple.ipynb
 
 ## TLDR:
 
@@ -28,10 +27,14 @@ To undertand the customer experience and why the score are declining, I performe
 
 
 ## Author
-
-- @[PippoRamos](#)
+- @[PippoRamos](https://github.com/pippo-sci)
 
 ## Table of Contents
+
+- [Tech Stack](#tech-stack)
+- [Run locally](#run-locally)
+- [Business Problem](#business-problem)
+- [Key findings](#key-findings)
 
 ## Tech Stack
 
@@ -44,3 +47,65 @@ To undertand the customer experience and why the score are declining, I performe
 - Numpy
 - NLTK
 - Scrapy
+
+## Run locally
+
+### Repository structure
+
+* [.ipynb_checkpoints/](.\Pullman\.ipynb_checkpoints)
+  * [Reputation Timeline Sea Temple-checkpoint.ipynb](.\Pullman\.ipynb_checkpoints\Reputation Timeline Sea Temple-checkpoint.ipynb)
+* [tripullman/](.\Pullman\tripullman)
+  * [.ipynb_checkpoints/](.\Pullman\tripullman\.ipynb_checkpoints)
+    * [test-checkpoint.csv](.\Pullman\tripullman\.ipynb_checkpoints\test-checkpoint.csv)
+  * [tripullman/](.\Pullman\tripullman\tripullman)
+    * [spiders/](.\Pullman\tripullman\tripullman\spiders)
+      * [__pycache__/](.\Pullman\tripullman\tripullman\spiders\__pycache__)
+        * [pull.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\pull.cpython-36.pyc)
+        * [Simple Scraper TripAdvisor.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\Simple Scraper TripAdvisor.cpython-36.pyc)
+        * [__init__.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\__init__.cpython-36.pyc)
+      * [pull.py](.\Pullman\tripullman\tripullman\spiders\pull.py)
+      * [Simple Scraper TripAdvisor.py](.\Pullman\tripullman\tripullman\spiders\Simple Scraper TripAdvisor.py)
+      * [__init__.py](.\Pullman\tripullman\tripullman\spiders\__init__.py)
+    * [__pycache__/](.\Pullman\tripullman\tripullman\__pycache__)
+      * [items.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\items.cpython-36.pyc)
+      * [settings.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\settings.cpython-36.pyc)
+      * [__init__.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\__init__.cpython-36.pyc)
+    * [items.py](.\Pullman\tripullman\tripullman\items.py)
+    * [middlewares.py](.\Pullman\tripullman\tripullman\middlewares.py)
+    * [pipelines.py](.\Pullman\tripullman\tripullman\pipelines.py)
+    * [settings.py](.\Pullman\tripullman\tripullman\settings.py)
+    * [__init__.py](.\Pullman\tripullman\tripullman\__init__.py)
+  * [pull1.csv](.\Pullman\tripullman\pull1.csv)
+  * [scrapy.cfg](.\Pullman\tripullman\scrapy.cfg)
+  * [test.csv](.\Pullman\tripullman\test.csv)
+* [README.md](.\Pullman\README.md)
+* [Reputation Timeline Sea Temple.ipynb](.\Pullman\Reputation Timeline Sea Temple.ipynb)
+* [requirements.txt](.\Pullman\requirements.txt)
+
+
+### Install requirements
+```
+pip install requirements.txt
+```
+### Run Scrapy script
+
+to run scrapy script go to /tripullman adn run
+```
+scrapy crawl pull -o test.csv
+```
+### Run Report (Jupyter Notebook)
+
+Open the file using VSCODE and jupyter notebook plugin OR 
+
+alternative open the terminal in the main folder and run
+
+```
+jupyter notebook
+```
+
+## Business Problem
+
+Pullman Sea temple Resort constantly check online reviews to improve service. However, it is difficult to have a systematical view of the text content of such reviews, specially to compare evolution and trends.
+
+## Key findings
+
