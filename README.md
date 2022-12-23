@@ -1,3 +1,5 @@
+/github/license/:user/:repo
+
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
 
@@ -38,7 +40,7 @@ To undertand the customer experience and why the score are declining, I performe
 
 ## Tech Stack
 
-- Python 3.7
+- Python 3.8
 - Jupyter notebook
 - Spacy
 - Gensim 3.8.3
@@ -46,6 +48,7 @@ To undertand the customer experience and why the score are declining, I performe
 - Pandas
 - Numpy
 - NLTK
+- Scklearn
 - Scrapy
 
 ## Run locally
@@ -89,7 +92,7 @@ pip install requirements.txt
 ```
 ### Run Scrapy script
 
-to run scrapy script go to /tripullman adn run
+to run scrapy script go to /tripullman and run
 ```
 scrapy crawl pull -o test.csv
 ```
@@ -108,4 +111,5 @@ jupyter notebook
 Pullman Sea temple Resort constantly check online reviews to improve service. However, it is difficult to have a systematical view of the text content of such reviews, specially to compare evolution and trends.
 
 ## Key findings
+
 
