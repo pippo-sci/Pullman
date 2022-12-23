@@ -10,22 +10,35 @@ Analyse text content from tripavisors reviews over Pullman resort in Port Dougla
 
 ## TLDR:
 
+
 I explore the current trends of `customer experience` through online comments on TripAdvisor for Pullman Sea temple (PPD) in Port Douglas, Queensland, Australia.
 
 By analysing the scores, I discovered:
 - The [score distribution by comments](#how-scores-distribute). Most comments have a high score (5 bubbles/stars)!
 
 However, when applying a `Time series analysis` I realised that:
-- [Monthly average number of comments](#timeseries) has increased through the years, although
-- [Score evolution](#score-through-time) shows a declining trend in recient years, and
-- when counting the proportion of comments, I dicovered that despite most comments are still positive, negatives are growing
+1. [Monthly average number of comments](#timeseries) has increased through the years, although
+2. [Score evolution](#score-through-time) shows a declining trend in recent years, and
+3. when counting the proportion of comments, I discovered that despite most comments are still positive, negatives are more predominant
+4. When checking the absolute values we see negative comments remaining the same but there are fewer new positive comments
 
-To undertand the customer experience and why the score are declining, I performed several `Text analysis` of the actual comments, to discover:
-- By using multiple strategies I extrated [most common phases](#the-comments) to see which factors are the most important for customers, like the swimming pool, the distance to town or the staff
-- Applying `vector similarity`, I build a [semi-supervised sentence classifier](#semi-supervised-classification-of-text) to group the text by its content in 5 categories: Housekeeping, Infrastructure, Restaurant, Front Desk and other. I later checked if their prevalence changed through time. Which wasn't the case.
-- Also, I used full unsupervised [Topic modelling technique](#other-way-to-classify-reviews-lda) to explore more relevant topics I could miss in the first analysis.
-- Then, I applied [Sentiment Analysis](#sentiment-analysis), to score how positive or negative a comment was by its content, and realised that Housekeeping has the most negative sentiment because it was higly impacted by high demand periods. 
-- Finally, I validated the result with the associated score to the sentence.
+To understand the customer experience and why the score is declining, I performed several `Text analysis` of the actual comments, to discover:
+1. By using multiple strategies I extracted [most common phases](#the-comments) to see which factors are the most important for customers, like the swimming pool, the distance to town or the staff
+2. Applying `vector similarity`, I build a [semi-supervised sentence classifier](#semi-supervised-classification-of-text) to group the text by its content in 5 categories: Housekeeping, Infrastructure, Restaurant, Front Desk and others. I later checked if their prevalence changed over time. Which wasn't the case: All 5 topics are relevant all the time.
+3. Also, I used full unsupervised [Topic modelling technique](#other-way-to-classify-reviews-lda) to explore more relevant topics I could miss in the first analysis.
+This analysis showed again that distance to town the swimming pool and the staff, specially from front desk, were the most important, but also: 
+    - The restaurant and room service
+    - Most rooms are fully equipped apartments with clean and spacious rooms with kitchen and laundry
+    - The latest is important for families with kids, it is likely the main type of customer
+    - Also the hotel configuration and the different types of buildings
+    - Atmosphere: luxury and tropical
+    - Other surrounding attractions like the Daintree and the Coral Reef
+    
+4. Then, I applied [Sentiment Analysis](#sentiment-analysis), to score how positive or negative a comment was by its content, and realised that Housekeeping has the least positive sentiment. While the Front desk was mostly positive.
+5. Finally, I used [Signal Decomposition](#seasonal-decomposition) over the sentiment score through time:
+    - Seasonality creates pressure over both Food and beverage and Housekeeping areas.
+    - Environmental and infrastructure factors may need renewal as its novelty use decay over time, as shown by its declining trend.
+    - Because rooms are functional apartments with independent access, some rooms are privately owned and rented through other media such AirBnB. And those may not include services from the hotel management and may have separate housekeeping and other services. Those can impact the comments score as more and more rooms are being sold to private owners.
 
 
 ## Author
