@@ -91,7 +91,6 @@ This analysis showed again that distance to town the swimming pool and the staff
     * [pipelines.py](.\Pullman\tripullman\tripullman\pipelines.py)
     * [settings.py](.\Pullman\tripullman\tripullman\settings.py)
     * [__init__.py](.\Pullman\tripullman\tripullman\__init__.py)
-  * [pull1.csv](.\Pullman\tripullman\pull1.csv)
   * [scrapy.cfg](.\Pullman\tripullman\scrapy.cfg)
   * [test.csv](.\Pullman\tripullman\test.csv)
 * [README.md](.\Pullman\README.md)
@@ -125,4 +124,4 @@ Pullman Sea temple Resort constantly check online reviews to improve service. Ho
 
 ## Key findings
 
-
+![Sentiment score for lda topics](/Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
