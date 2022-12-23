@@ -124,4 +124,4 @@ Pullman Sea temple Resort constantly check online reviews to improve service. Ho
 
 ## Key findings
 
-![Sentiment score for lda topics](/Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
+![Sentiment score for lda topics](Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
