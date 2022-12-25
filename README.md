@@ -1,4 +1,4 @@
-/github/license/:user/:repo
+[](/github/license/pippo-sci/Pullmann)
 
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
