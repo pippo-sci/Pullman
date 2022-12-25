@@ -1,5 +1,7 @@
 [![MIT](/github/license/pippo-sci/Pullmann)](https://img.shields.io/github/license/pippo-sci/Pullman)]()
 
+![GitHub](https://img.shields.io/github/license/pippo-sci/Pullman)
+
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
 
