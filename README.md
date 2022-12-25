@@ -1,6 +1,11 @@
-[![MIT](/github/license/pippo-sci/Pullmann)](https://img.shields.io/github/license/pippo-sci/Pullman)]()
-
 ![GitHub](https://img.shields.io/github/license/pippo-sci/Pullman)
+![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
 
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
@@ -126,4 +131,4 @@ Pullman Sea temple Resort constantly check online reviews to improve service. Ho
 
 ## Key findings
 
-[[!]Sentiment score for lda topics](Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
+![Sentiment score for lda topics](Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
