@@ -132,19 +132,19 @@ Pullman Sea temple Resort constantly check online reviews to improve service. Ho
 ## Key findings
 
 ### User's Scores
-![users_score](images\post_numb_by_score_bar.png)
-![avg_month_score](images\monthly_avg_score.png)
-![Prop_avg_score](images\proportion_post_by_score_v_time.png)
-![Abs_avg_score](images\abs_numb_post_by_score_v_time.png)
+![users_score](images/post_numb_by_score_bar.png)
+![avg_month_score](images/monthly_avg_score.png)
+![Prop_avg_score](images/proportion_post_by_score_v_time.png)
+![Abs_avg_score](images/abs_numb_post_by_score_v_time.png)
 
 ### Topics
-![semi-supervised topics](images\Dist_sent_score_by_topic.png)
-![unsupervised_topics](images\Dist_sent_score_by_selected_lda_topic.png)
+![semi-supervised topics](images/Dist_sent_score_by_topic.png)
+![unsupervised_topics](images/Dist_sent_score_by_selected_lda_topic.png)
 
 ### Sentiment Score
-![Sentiment_score](images\avg_sent_score_by_topic_v_time.png)
+![Sentiment_score](images/avg_sent_score_by_topic_v_time.png)
 
 ### Seasonality
-![Sentiment_score](images\signal_decomp_frontdesk.png)
-![Sentiment_score](images\signal_decomp_housekeep.png)
+![Sentiment_score](images/signal_decomp_frontdesk.png)
+![Sentiment_score](images/signal_decomp_housekeep.png)
 
