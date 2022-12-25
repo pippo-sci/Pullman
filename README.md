@@ -1,4 +1,4 @@
-[](/github/license/pippo-sci/Pullmann)
+[[](/github/license/pippo-sci/Pullmann)](https://img.shields.io/github/license/pippo-sci/Pullman)
 
 # Pullman Sea Temple Port Douglas Online Comments analysis
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
@@ -124,4 +124,4 @@ Pullman Sea temple Resort constantly check online reviews to improve service. Ho
 
 ## Key findings
 
-![Sentiment score for lda topics](Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
+[[!]Sentiment score for lda topics](Selected graphs/Dist_sent_score_by_selected_lda_topic.png)
