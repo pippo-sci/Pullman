@@ -1,6 +1,19 @@
 ![GitHub](https://img.shields.io/github/license/pippo-sci/Pullman)
 
 # Pullman Sea Temple Port Douglas Online Comments analysis
+
+## Table of Contents
+
+- [General Description](#general-description)
+- [Author](#author)
+- [TLDR](#TLDR:)
+- [Business Problem](#business-problem)
+- [Tech Stack](#tech-stack)
+- [Run locally](#run-locally)
+- [Key findings](#key-findings)
+
+## General description
+
 Reputation analysis using Natural Language Processing tools (Text analyctics), semisupervised classification and timeseries analysis.
 
 Analyse text content from tripavisors reviews over Pullman resort in Port Douglas, using a varity of methods.
@@ -10,11 +23,12 @@ Analyse text content from tripavisors reviews over Pullman resort in Port Dougla
 
 ## TLDR:
 
-
 I explore the current trends of `customer experience` through online comments on TripAdvisor for Pullman Sea temple (PPD) in Port Douglas, Queensland, Australia.
 
 By analysing the scores, I discovered:
 - The [score distribution by comments](#how-scores-distribute). Most comments have a high score (5 bubbles/stars)!
+
+![users_score](images/post_numb_by_score_bar.png)
 
 However, when applying a `Time series analysis` I realised that:
 1. [Monthly average number of comments](#timeseries) has increased through the years, although
@@ -22,9 +36,16 @@ However, when applying a `Time series analysis` I realised that:
 3. when counting the proportion of comments, I discovered that despite most comments are still positive, negatives are more predominant
 4. When checking the absolute values we see negative comments remaining the same but there are fewer new positive comments
 
+![avg_month_score](images/monthly_avg_score.png)
+![Prop_avg_score](images/proportion_post_by_score_v_time.png)
+![Abs_avg_score](images/abs_numb_post_by_score_v_time.png)
+
 To understand the customer experience and why the score is declining, I performed several `Text analysis` of the actual comments, to discover:
 1. By using multiple strategies I extracted [most common phases](#the-comments) to see which factors are the most important for customers, like the swimming pool, the distance to town or the staff
 2. Applying `vector similarity`, I build a [semi-supervised sentence classifier](#semi-supervised-classification-of-text) to group the text by its content in 5 categories: Housekeeping, Infrastructure, Restaurant, Front Desk and others. I later checked if their prevalence changed over time. Which wasn't the case: All 5 topics are relevant all the time.
+
+![semi-supervised topics](images/Dist_sent_score_by_topic.png)
+
 3. Also, I used full unsupervised [Topic modelling technique](#other-way-to-classify-reviews-lda) to explore more relevant topics I could miss in the first analysis.
 This analysis showed again that distance to town the swimming pool and the staff, specially from front desk, were the most important, but also: 
     - The restaurant and room service
@@ -33,23 +54,28 @@ This analysis showed again that distance to town the swimming pool and the staff
     - Also the hotel configuration and the different types of buildings
     - Atmosphere: luxury and tropical
     - Other surrounding attractions like the Daintree and the Coral Reef
+
+![unsupervised_topics](images/Dist_sent_score_by_selected_lda_topic.png)
     
 4. Then, I applied [Sentiment Analysis](#sentiment-analysis), to score how positive or negative a comment was by its content, and realised that Housekeeping has the least positive sentiment. While the Front desk was mostly positive.
+
+![Sentiment_score](images/avg_sent_score_by_topic_v_time.png)
+
 5. Finally, I used [Signal Decomposition](#seasonal-decomposition) over the sentiment score through time:
     - Seasonality creates pressure over both Food and beverage and Housekeeping areas.
     - Environmental and infrastructure factors may need renewal as its novelty use decay over time, as shown by its declining trend.
     - Because rooms are functional apartments with independent access, some rooms are privately owned and rented through other media such AirBnB. And those may not include services from the hotel management and may have separate housekeeping and other services. Those can impact the comments score as more and more rooms are being sold to private owners.
 
+![Sentiment_score](images/signal_decomp_frontdesk.png)
+![Sentiment_score](images/signal_decomp_housekeep.png)
 
 ## Author
 - @[PippoRamos](https://github.com/pippo-sci)
 
-## Table of Contents
+## Business Problem
 
-- [Tech Stack](#tech-stack)
-- [Run locally](#run-locally)
-- [Business Problem](#business-problem)
-- [Key findings](#key-findings)
+Pullman Sea temple Resort constantly check online reviews to improve service. However, it is difficult to have a systematical view of the text content of such reviews, specially to compare evolution and trends.
+
 
 ## Tech Stack
 ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
@@ -76,23 +102,14 @@ This analysis showed again that distance to town the swimming pool and the staff
 ### Repository structure
 
 * [.ipynb_checkpoints/](.\Pullman\.ipynb_checkpoints)
-  * [Reputation Timeline Sea Temple-checkpoint.ipynb](.\Pullman\.ipynb_checkpoints\Reputation Timeline Sea Temple-checkpoint.ipynb)
 * [tripullman/](.\Pullman\tripullman)
   * [.ipynb_checkpoints/](.\Pullman\tripullman\.ipynb_checkpoints)
-    * [test-checkpoint.csv](.\Pullman\tripullman\.ipynb_checkpoints\test-checkpoint.csv)
   * [tripullman/](.\Pullman\tripullman\tripullman)
     * [spiders/](.\Pullman\tripullman\tripullman\spiders)
       * [__pycache__/](.\Pullman\tripullman\tripullman\spiders\__pycache__)
-        * [pull.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\pull.cpython-36.pyc)
-        * [Simple Scraper TripAdvisor.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\Simple Scraper TripAdvisor.cpython-36.pyc)
-        * [__init__.cpython-36.pyc](.\Pullman\tripullman\tripullman\spiders\__pycache__\__init__.cpython-36.pyc)
       * [pull.py](.\Pullman\tripullman\tripullman\spiders\pull.py)
-      * [Simple Scraper TripAdvisor.py](.\Pullman\tripullman\tripullman\spiders\Simple Scraper TripAdvisor.py)
       * [__init__.py](.\Pullman\tripullman\tripullman\spiders\__init__.py)
     * [__pycache__/](.\Pullman\tripullman\tripullman\__pycache__)
-      * [items.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\items.cpython-36.pyc)
-      * [settings.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\settings.cpython-36.pyc)
-      * [__init__.cpython-36.pyc](.\Pullman\tripullman\tripullman\__pycache__\__init__.cpython-36.pyc)
     * [items.py](.\Pullman\tripullman\tripullman\items.py)
     * [middlewares.py](.\Pullman\tripullman\tripullman\middlewares.py)
     * [pipelines.py](.\Pullman\tripullman\tripullman\pipelines.py)
@@ -101,7 +118,7 @@ This analysis showed again that distance to town the swimming pool and the staff
   * [scrapy.cfg](.\Pullman\tripullman\scrapy.cfg)
   * [test.csv](.\Pullman\tripullman\test.csv)
 * [README.md](.\Pullman\README.md)
-* [Reputation Timeline Sea Temple.ipynb](.\Pullman\Reputation Timeline Sea Temple.ipynb)
+* [Reputation Timeline Sea Temple.ipynb](#)
 * [requirements.txt](.\Pullman\requirements.txt)
 
 
@@ -125,26 +142,4 @@ alternative open the terminal in the main folder and run
 jupyter notebook
 ```
 
-## Business Problem
-
-Pullman Sea temple Resort constantly check online reviews to improve service. However, it is difficult to have a systematical view of the text content of such reviews, specially to compare evolution and trends.
-
-## Key findings
-
-### User's Scores
-![users_score](images/post_numb_by_score_bar.png)
-![avg_month_score](images/monthly_avg_score.png)
-![Prop_avg_score](images/proportion_post_by_score_v_time.png)
-![Abs_avg_score](images/abs_numb_post_by_score_v_time.png)
-
-### Topics
-![semi-supervised topics](images/Dist_sent_score_by_topic.png)
-![unsupervised_topics](images/Dist_sent_score_by_selected_lda_topic.png)
-
-### Sentiment Score
-![Sentiment_score](images/avg_sent_score_by_topic_v_time.png)
-
-### Seasonality
-![Sentiment_score](images/signal_decomp_frontdesk.png)
-![Sentiment_score](images/signal_decomp_housekeep.png)
 
